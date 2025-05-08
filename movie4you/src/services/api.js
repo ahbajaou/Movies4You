@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'https://api.themoviedb.org/3';
-const API_KEY="ec1c15e59c56238d778e72dd2cec8518";
+// In Vite, use import.meta.env to access environment variables
+const API_URL = import.meta.env.VITE_API_URL ;
+const API_KEY = import.meta.env.VITE_API_KEY ;
 
 const api = axios.create({
     baseURL: API_URL,
@@ -12,6 +13,7 @@ const api = axios.create({
         api_key: API_KEY,
     }
 });
+
 export const fetchMovies = async () => {
     try {
         const response = await api.get('/movie/popular', {

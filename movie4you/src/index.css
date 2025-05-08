@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Original custom styles */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Removing styles that would conflict with Tailwind */
+/* Other custom styles can be added here if needed */
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  /* You can define custom component classes here */
+  .movie-title {
+    @apply text-white font-bold tracking-wide;
+  }
+  
+  .movie-button {
+    @apply bg-red-600 hover:bg-red-700 text-white transition-colors duration-300;
+  }
+}
